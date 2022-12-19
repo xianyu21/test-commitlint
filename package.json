@@ -8,7 +8,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "husky install",
+    "lint-staged": "lint-staged --allow-empty",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "yarn run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
   },
   "dependencies": {
     "vue": "^3.2.45"
